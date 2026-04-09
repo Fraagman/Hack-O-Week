@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeStore | Premium Goods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">LUXE.</div>
+        <div class="header-controls">
+            <div class="search-bar">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Search collection...">
+            </div>
+            <div class="cart-icon">
+                <ion-icon name="bag-handle-outline"></ion-icon>
+                <span class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Curated Collection</h1>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

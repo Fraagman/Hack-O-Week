@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-accent: "Cormorant Garamond", serif;
+
+  --color-warm-50: #fdf8f0;
+  --color-warm-100: #f5ebe0;
+  --color-warm-200: #e8d5c0;
+  --color-warm-300: #d4b896;
+  --color-warm-400: #c49a6c;
+  --color-warm-500: #b07d4f;
+  --color-warm-600: #9a6840;
+  --color-warm-700: #7d5234;
+  --color-warm-800: #5e3d27;
+  --color-warm-900: #3d2718;
+
+  --color-olive-50: #f4f5ef;
+  --color-olive-100: #e4e7d8;
+  --color-olive-200: #c8cdb0;
+  --color-olive-300: #a5ad82;
+  --color-olive-400: #808a56;
+  --color-olive-500: #636c3e;
+  --color-olive-600: #4d5530;
+  --color-olive-700: #3b4125;
+  --color-olive-800: #2c311c;
+  --color-olive-900: #1e2213;
+
+  --color-cream: #faf6f0;
+  --color-parchment: #f5ede1;
+  --color-charcoal: #2c2c2c;
+  --color-espresso: #1a1412;
+  --color-gold: #c8a456;
+  --color-gold-light: #dfc077;
+  --color-burgundy: #722f37;
+  --color-burgundy-dark: #5a252c;
+  --color-saffron: #e67e22;
+  --color-indian-green: #2e7d32;
+  --color-indian-red: #c62828;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-warm-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-400);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-500);
+}
+
+/* Decorative divider */
+.menu-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.menu-divider::before,
+.menu-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-warm-300),
+    transparent
+  );
+}
+
+/* Animate on scroll */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tag styling */
+.menu-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+/* Veg / Non-Veg Indian standard indicator */
+.veg-indicator {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.veg-indicator::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.veg-indicator.veg {
+  border-color: #2e7d32;
+}
+.veg-indicator.veg::after {
+  background-color: #2e7d32;
+}
+.veg-indicator.nonveg {
+  border-color: #c62828;
+}
+.veg-indicator.nonveg::after {
+  background-color: #c62828;
+}
+.veg-indicator.egg {
+  border-color: #e67e22;
+}
+.veg-indicator.egg::after {
+  background-color: #e67e22;
+}
+
+/* Hide scrollbar on nav */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
